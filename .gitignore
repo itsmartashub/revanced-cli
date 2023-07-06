@@ -74,6 +74,7 @@ cmake-build-*/
 
 # IntelliJ
 out/
+.idea
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
@@ -113,6 +114,9 @@ gradle-app.setting
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 
+# Dependency directories
+node_modules/
+
+# ReVanced CLI
 revanced-cache/
 options.toml
-.idea/vcs.xml

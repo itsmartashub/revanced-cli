@@ -1,3 +1,268 @@
+# [2.21.0](https://github.com/revanced/revanced-cli/compare/v2.20.2...v2.21.0) (2023-05-04)
+
+
+### Bug Fixes
+
+* **tests:** set order of tests ([2ef48af](https://github.com/revanced/revanced-cli/commit/2ef48af1b339ab729a05d69cb0c8c1ee1e3ab486))
+* use working JADB dependency version ([#222](https://github.com/revanced/revanced-cli/issues/222)) ([da2c918](https://github.com/revanced/revanced-cli/commit/da2c91874d5623402febfcc0677ada3d648565e1))
+
+
+### Features
+
+* add appreciation message for new contributors ([6962fc2](https://github.com/revanced/revanced-cli/commit/6962fc2f4c0f0c96e88a823be64f8ebd1312ee17))
+
+# [2.21.0-dev.1](https://github.com/revanced/revanced-cli/compare/v2.20.2...v2.21.0-dev.1) (2023-05-04)
+
+
+### Bug Fixes
+
+* **tests:** set order of tests ([2ef48af](https://github.com/revanced/revanced-cli/commit/2ef48af1b339ab729a05d69cb0c8c1ee1e3ab486))
+* use working JADB dependency version ([#222](https://github.com/revanced/revanced-cli/issues/222)) ([da2c918](https://github.com/revanced/revanced-cli/commit/da2c91874d5623402febfcc0677ada3d648565e1))
+
+
+### Features
+
+* add appreciation message for new contributors ([6962fc2](https://github.com/revanced/revanced-cli/commit/6962fc2f4c0f0c96e88a823be64f8ebd1312ee17))
+
+## [2.20.2](https://github.com/revanced/revanced-cli/compare/v2.20.1...v2.20.2) (2023-04-30)
+
+
+### Bug Fixes
+
+* correct spelling mistake ([31fb316](https://github.com/revanced/revanced-cli/commit/31fb3166d922ae1f568f52e44cbe726dd1c891a4))
+
+## [2.20.2-dev.1](https://github.com/revanced/revanced-cli/compare/v2.20.1...v2.20.2-dev.1) (2023-04-03)
+
+
+### Bug Fixes
+
+* correct spelling mistake ([31fb316](https://github.com/revanced/revanced-cli/commit/31fb3166d922ae1f568f52e44cbe726dd1c891a4))
+
+## [2.20.1](https://github.com/revanced/revanced-cli/compare/v2.20.0...v2.20.1) (2023-03-14)
+
+
+### Bug Fixes
+
+* correctly word option descriptions ([ac3a8f6](https://github.com/revanced/revanced-cli/commit/ac3a8f66f77a7218974465eebbfc78a536b76d51))
+
+## [2.20.1-dev.1](https://github.com/revanced/revanced-cli/compare/v2.20.0...v2.20.1-dev.1) (2023-03-05)
+
+
+### Bug Fixes
+
+* correctly word option descriptions ([ac3a8f6](https://github.com/revanced/revanced-cli/commit/ac3a8f66f77a7218974465eebbfc78a536b76d51))
+
+## [2.20.1-dev.1](https://github.com/revanced/revanced-cli/compare/v2.20.0...v2.20.1-dev.1) (2023-03-03)
+
+
+### Bug Fixes
+
+* correctly word option descriptions ([ac3a8f6](https://github.com/revanced/revanced-cli/commit/ac3a8f66f77a7218974465eebbfc78a536b76d51))
+
+## [2.20.1-dev.1](https://github.com/revanced/revanced-cli/compare/v2.20.0...v2.20.1-dev.1) (2023-03-02)
+
+
+### Bug Fixes
+
+* correctly word option descriptions ([ac3a8f6](https://github.com/revanced/revanced-cli/commit/ac3a8f66f77a7218974465eebbfc78a536b76d51))
+
+# [2.20.0](https://github.com/revanced/revanced-cli/compare/v2.19.0...v2.20.0) (2023-01-18)
+
+
+### Bug Fixes
+
+* bump patcher dependency version ([51c04b7](https://github.com/revanced/revanced-cli/commit/51c04b7b162ad2876bbeb248b7ccddd105b5076d))
+* do not list compatible packages if patches do not define them ([31e4a41](https://github.com/revanced/revanced-cli/commit/31e4a41dd20f5fa62f840cd8e3b92fe0814eda87))
+
+
+### Features
+
+* connect to first device if given device was not found ([6485e47](https://github.com/revanced/revanced-cli/commit/6485e477a10bb89dfb2e40f3596d72b20bf23cc8))
+* remove option `--with-descriptions` ([07a423b](https://github.com/revanced/revanced-cli/commit/07a423b19ec72e9f020aeb0222f4ced571036dbe))
+
+# [2.20.0](https://github.com/revanced/revanced-cli/compare/v2.19.0...v2.20.0) (2023-01-17)
+
+
+### Bug Fixes
+
+* bump patcher dependency version ([51c04b7](https://github.com/revanced/revanced-cli/commit/51c04b7b162ad2876bbeb248b7ccddd105b5076d))
+* do not list compatible packages if patches do not define them ([31e4a41](https://github.com/revanced/revanced-cli/commit/31e4a41dd20f5fa62f840cd8e3b92fe0814eda87))
+
+
+### Features
+
+* connect to first device if given device was not found ([6485e47](https://github.com/revanced/revanced-cli/commit/6485e477a10bb89dfb2e40f3596d72b20bf23cc8))
+* remove option `--with-descriptions` ([07a423b](https://github.com/revanced/revanced-cli/commit/07a423b19ec72e9f020aeb0222f4ced571036dbe))
+
+# [2.20.0-dev.3](https://github.com/revanced/revanced-cli/compare/v2.20.0-dev.2...v2.20.0-dev.3) (2023-01-15)
+
+
+### Bug Fixes
+
+* bump patcher dependency version ([51c04b7](https://github.com/revanced/revanced-cli/commit/51c04b7b162ad2876bbeb248b7ccddd105b5076d))
+
+# [2.20.0-dev.2](https://github.com/revanced/revanced-cli/compare/v2.20.0-dev.1...v2.20.0-dev.2) (2023-01-15)
+
+
+### Features
+
+* connect to first device if given device was not found ([6485e47](https://github.com/revanced/revanced-cli/commit/6485e477a10bb89dfb2e40f3596d72b20bf23cc8))
+
+# [2.20.0](https://github.com/revanced/revanced-cli/compare/v2.19.0...v2.20.0) (2023-01-02)
+
+
+### Bug Fixes
+
+* do not list compatible packages if patches do not define them ([31e4a41](https://github.com/revanced/revanced-cli/commit/31e4a41dd20f5fa62f840cd8e3b92fe0814eda87))
+
+
+### Features
+
+* remove option `--with-descriptions` ([07a423b](https://github.com/revanced/revanced-cli/commit/07a423b19ec72e9f020aeb0222f4ced571036dbe))
+
+# [2.20.0](https://github.com/revanced/revanced-cli/compare/v2.19.0...v2.20.0) (2023-01-01)
+
+
+### Bug Fixes
+
+* do not list compatible packages if patches do not define them ([31e4a41](https://github.com/revanced/revanced-cli/commit/31e4a41dd20f5fa62f840cd8e3b92fe0814eda87))
+
+
+### Features
+
+* remove option `--with-descriptions` ([07a423b](https://github.com/revanced/revanced-cli/commit/07a423b19ec72e9f020aeb0222f4ced571036dbe))
+
+# [2.20.0-dev.1](https://github.com/revanced/revanced-cli/compare/v2.19.0...v2.20.0-dev.1) (2023-01-01)
+
+
+### Bug Fixes
+
+* do not list compatible packages if patches do not define them ([31e4a41](https://github.com/revanced/revanced-cli/commit/31e4a41dd20f5fa62f840cd8e3b92fe0814eda87))
+
+
+### Features
+
+* remove option `--with-descriptions` ([07a423b](https://github.com/revanced/revanced-cli/commit/07a423b19ec72e9f020aeb0222f4ced571036dbe))
+
+# [2.19.0](https://github.com/revanced/revanced-cli/compare/v2.18.2...v2.19.0) (2022-12-31)
+
+
+### Features
+
+* improve description of options ([#185](https://github.com/revanced/revanced-cli/issues/185)) ([b69e784](https://github.com/revanced/revanced-cli/commit/b69e784785f7f262f83b35c4f241c90036169fc7))
+
+# [2.19.0-dev.1](https://github.com/revanced/revanced-cli/compare/v2.18.2...v2.19.0-dev.1) (2022-12-31)
+
+
+### Features
+
+* improve description of options ([#185](https://github.com/revanced/revanced-cli/issues/185)) ([b69e784](https://github.com/revanced/revanced-cli/commit/b69e784785f7f262f83b35c4f241c90036169fc7))
+
+## [2.18.2](https://github.com/revanced/revanced-cli/compare/v2.18.1...v2.18.2) (2022-12-16)
+
+
+### Bug Fixes
+
+* exclude patcher dependency from minimizing ([d5794b9](https://github.com/revanced/revanced-cli/commit/d5794b94ca19c9287190a3b863c97a089893cc07))
+
+## [2.18.2-dev.1](https://github.com/revanced/revanced-cli/compare/v2.18.1...v2.18.2-dev.1) (2022-12-16)
+
+
+### Bug Fixes
+
+* exclude patcher dependency from minimizing ([d5794b9](https://github.com/revanced/revanced-cli/commit/d5794b94ca19c9287190a3b863c97a089893cc07))
+
+## [2.18.1](https://github.com/revanced/revanced-cli/compare/v2.18.0...v2.18.1) (2022-12-15)
+
+
+### Bug Fixes
+
+* don't log when package is incompatible and `exclusive` option is used ([ad81a1b](https://github.com/revanced/revanced-cli/commit/ad81a1b656586226f8b7b8d1123c52b0f3f2e6f7))
+
+## [2.18.1-dev.1](https://github.com/revanced/revanced-cli/compare/v2.18.0...v2.18.1-dev.1) (2022-12-15)
+
+
+### Bug Fixes
+
+* don't log when package is incompatible and `exclusive` option is used ([ad81a1b](https://github.com/revanced/revanced-cli/commit/ad81a1b656586226f8b7b8d1123c52b0f3f2e6f7))
+
+# [2.18.0](https://github.com/revanced/revanced-cli/compare/v2.17.0...v2.18.0) (2022-12-15)
+
+
+### Bug Fixes
+
+* start with uppercase in log message ([ae91b0d](https://github.com/revanced/revanced-cli/commit/ae91b0d597b107a152e1b630b8c16a795a7ca3b3))
+* use correct prefix in log message ([1a67cd8](https://github.com/revanced/revanced-cli/commit/1a67cd81da5ed7f259b6dbaeb66a7eef4a113034))
+
+
+### Features
+
+* simplify log message ([74d73ca](https://github.com/revanced/revanced-cli/commit/74d73ca3a7ba2f5da872fe9a241629e1c143cd4e))
+
+# [2.18.0](https://github.com/revanced/revanced-cli/compare/v2.17.0...v2.18.0) (2022-12-15)
+
+
+### Bug Fixes
+
+* start with uppercase in log message ([ae91b0d](https://github.com/revanced/revanced-cli/commit/ae91b0d597b107a152e1b630b8c16a795a7ca3b3))
+* use correct prefix in log message ([1a67cd8](https://github.com/revanced/revanced-cli/commit/1a67cd81da5ed7f259b6dbaeb66a7eef4a113034))
+
+
+### Features
+
+* simplify log message ([74d73ca](https://github.com/revanced/revanced-cli/commit/74d73ca3a7ba2f5da872fe9a241629e1c143cd4e))
+
+# [2.18.0-dev.1](https://github.com/revanced/revanced-cli/compare/v2.17.1-dev.2...v2.18.0-dev.1) (2022-12-15)
+
+
+### Bug Fixes
+
+* start with uppercase in log message ([ae91b0d](https://github.com/revanced/revanced-cli/commit/ae91b0d597b107a152e1b630b8c16a795a7ca3b3))
+* use correct prefix in log message ([1a67cd8](https://github.com/revanced/revanced-cli/commit/1a67cd81da5ed7f259b6dbaeb66a7eef4a113034))
+
+
+### Features
+
+* simplify log message ([74d73ca](https://github.com/revanced/revanced-cli/commit/74d73ca3a7ba2f5da872fe9a241629e1c143cd4e))
+
+## [2.17.1-dev.2](https://github.com/revanced/revanced-cli/compare/v2.17.1-dev.1...v2.17.1-dev.2) (2022-12-15)
+
+## [2.17.1-dev.1](https://github.com/revanced/revanced-cli/compare/v2.17.0...v2.17.1-dev.1) (2022-12-15)
+
+# [2.17.0](https://github.com/revanced/revanced-cli/compare/v2.16.1...v2.17.0) (2022-12-14)
+
+
+### Bug Fixes
+
+* invalid header when writing a `ZipFile` ([#169](https://github.com/revanced/revanced-cli/issues/169)) ([6e703eb](https://github.com/revanced/revanced-cli/commit/6e703eb8e8d7da0e52266c4965f37bc8aafb409c))
+
+
+### Features
+
+* improve missing compatibility annotation tracing log ([2c7eb72](https://github.com/revanced/revanced-cli/commit/2c7eb7274c713dfbcb53c5f3b6a9205c751914fa))
+* trace logs when compatibility annotation is missing ([#166](https://github.com/revanced/revanced-cli/issues/166)) ([c590bf5](https://github.com/revanced/revanced-cli/commit/c590bf559c4d2d2667c2af0c0da23d4706fcd4b7))
+
+# [2.17.0-dev.3](https://github.com/revanced/revanced-cli/compare/v2.17.0-dev.2...v2.17.0-dev.3) (2022-12-14)
+
+
+### Features
+
+* improve missing compatibility annotation tracing log ([2c7eb72](https://github.com/revanced/revanced-cli/commit/2c7eb7274c713dfbcb53c5f3b6a9205c751914fa))
+
+# [2.17.0-dev.2](https://github.com/revanced/revanced-cli/compare/v2.17.0-dev.1...v2.17.0-dev.2) (2022-12-14)
+
+
+### Bug Fixes
+
+* invalid header when writing a `ZipFile` ([#169](https://github.com/revanced/revanced-cli/issues/169)) ([6e703eb](https://github.com/revanced/revanced-cli/commit/6e703eb8e8d7da0e52266c4965f37bc8aafb409c))
+
+# [2.17.0-dev.1](https://github.com/revanced/revanced-cli/compare/v2.16.1...v2.17.0-dev.1) (2022-12-11)
+
+
+### Features
+
+* trace logs when compatibility annotation is missing ([#166](https://github.com/revanced/revanced-cli/issues/166)) ([c590bf5](https://github.com/revanced/revanced-cli/commit/c590bf559c4d2d2667c2af0c0da23d4706fcd4b7))
+
 ## [2.16.1](https://github.com/revanced/revanced-cli/compare/v2.16.0...v2.16.1) (2022-11-22)
 
 # [2.16.0](https://github.com/revanced/revanced-cli/compare/v2.15.1...v2.16.0) (2022-11-20)

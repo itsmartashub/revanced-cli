@@ -7,15 +7,23 @@ import app.revanced.cli.patcher.logging.impl.PatcherLogger
 import app.revanced.cli.signing.Signing
 import app.revanced.cli.signing.SigningOptions
 import app.revanced.patcher.PatcherOptions
+import app.revanced.patcher.data.Context
 import app.revanced.patcher.extensions.PatchExtensions.compatiblePackages
 import app.revanced.patcher.extensions.PatchExtensions.description
 import app.revanced.patcher.extensions.PatchExtensions.patchName
+import app.revanced.patcher.patch.Patch
 import app.revanced.patcher.util.patch.PatchBundle
-import app.revanced.utils.OptionsLoader
+import app.revanced.utils.Options
+import app.revanced.utils.Options.setOptions
 import app.revanced.utils.adb.Adb
 import picocli.CommandLine.*
 import java.io.File
 import java.nio.file.Files
+
+/**
+ * Alias for return type of [PatchBundle.loadPatches].
+ */
+internal typealias PatchList = List<Class<out Patch<Context>>>
 
 private class CLIVersionProvider : IVersionProvider {
     override fun getVersion() = arrayOf(
@@ -35,13 +43,16 @@ internal object MainCommand : Runnable {
     lateinit var args: Args
 
     class Args {
-        @Option(names = ["-a", "--apk"], description = ["Input file to be patched"], required = true)
+        @Option(names = ["-a", "--apk"], description = ["Input APK file to be patched"], required = true)
         lateinit var inputFile: File
 
         @Option(names = ["--uninstall"], description = ["Uninstall the mount variant"])
         var uninstall: Boolean = false
 
-        @Option(names = ["-d", "--deploy-on"], description = ["If specified, deploy to adb device with given name"])
+        @Option(
+            names = ["-d", "--deploy-on"],
+            description = ["If specified, deploy to device over ADB with given name"]
+        )
         var deploy: String? = null
 
         @ArgGroup(exclusive = false)
@@ -49,11 +60,11 @@ internal object MainCommand : Runnable {
     }
 
     class PatchArgs {
-        @Option(names = ["-b", "--bundles"], description = ["One or more bundles of patches"], required = true)
+        @Option(names = ["-b", "--bundle"], description = ["One or more bundles of patches"], required = true)
         var patchBundles = arrayOf<String>()
 
-        @Option(names = ["--options"], description = ["Configuration file for all patch options"])
-        var options: File = File("options.toml")
+        @Option(names = ["--options"], description = ["Path to patch options JSON file"])
+        var optionsFile: File = File("options.json")
 
         @ArgGroup(exclusive = false)
         var listingArgs: ListingArgs? = null
@@ -63,7 +74,7 @@ internal object MainCommand : Runnable {
     }
 
     class ListingArgs {
-        @Option(names = ["-l", "--list"], description = ["List patches only"], required = true)
+        @Option(names = ["-l", "--list"], description = ["List patches"], required = true)
         var listOnly: Boolean = false
 
         @Option(names = ["--with-versions"], description = ["List patches with compatible versions"])
@@ -71,9 +82,6 @@ internal object MainCommand : Runnable {
 
         @Option(names = ["--with-packages"], description = ["List patches with compatible packages"])
         var withPackages: Boolean = false
-
-        @Option(names = ["--with-descriptions"], description = ["List patches with their descriptions"])
-        var withDescriptions: Boolean = true
     }
 
     class PatchingArgs {
@@ -87,7 +95,7 @@ internal object MainCommand : Runnable {
             names = ["--exclusive"],
             description = ["Only installs the patches you include, not including any patch by default"]
         )
-        var defaultExclude = false
+        var exclusive = false
 
         @Option(names = ["-i", "--include"], description = ["Include patches"])
         var includedPatches = arrayOf<String>()
@@ -134,7 +142,10 @@ internal object MainCommand : Runnable {
             PatchBundle.Jar(bundle).loadPatches()
         }
 
-        OptionsLoader.init(args.patchArgs!!.options, allPatches)
+        args.patchArgs!!.optionsFile.let {
+            if (it.exists()) allPatches.setOptions(it, logger)
+            else Options.serialize(allPatches, prettyPrint = true).let(it::writeText)
+        }
 
         val patcher = app.revanced.patcher.Patcher(
             PatcherOptions(
@@ -151,16 +162,14 @@ internal object MainCommand : Runnable {
             Adb(outputFile, patcher.context.packageMetadata.packageName, args.deploy!!, !pArgs.mount)
         }
 
-        val patchedFile = File(pArgs.cacheDirectory).resolve("${outputFile.nameWithoutExtension}_raw.apk")
-
         // start the patcher
-        Patcher.start(patcher, patchedFile, allPatches)
+        val result = Patcher.start(patcher, allPatches)
 
         val cacheDirectory = File(pArgs.cacheDirectory)
 
         // align the file
         val alignedFile = cacheDirectory.resolve("${outputFile.nameWithoutExtension}_aligned.apk")
-        Aligning.align(patchedFile, alignedFile)
+        Aligning.align(result, args.inputFile, alignedFile)
 
         // sign the file
         val finalFile = if (!pArgs.mount) {
@@ -222,7 +231,7 @@ internal object MainCommand : Runnable {
         for (patchBundlePath in args.patchArgs?.patchBundles!!) for (patch in PatchBundle.Jar(patchBundlePath)
             .loadPatches()) {
             if (patch.patchName in logged) continue
-            for (compatiblePackage in patch.compatiblePackages!!) {
+            for (compatiblePackage in patch.compatiblePackages ?: continue) {
                 val packageEntryStr = buildString {
                     // Add package if flag is set
                     if (args.patchArgs?.listingArgs?.withPackages == true) {
@@ -230,14 +239,15 @@ internal object MainCommand : Runnable {
                         append(packageName)
                         append("\t")
                     }
+
                     // Add patch name
                     val patchName = patch.patchName.padStart(25)
                     append(patchName)
+
                     // Add description if flag is set.
-                    if (args.patchArgs?.listingArgs?.withDescriptions == true) {
-                        append("\t")
-                        append(patch.description)
-                    }
+                    append("\t")
+                    append(patch.description)
+
                     // Add compatible versions, if flag is set
                     if (args.patchArgs?.listingArgs?.withVersions == true) {
                         val compatibleVersions = compatiblePackage.versions.joinToString(separator = ", ")
